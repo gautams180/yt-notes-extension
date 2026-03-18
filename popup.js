@@ -9,6 +9,13 @@ const addNewBookmark = (bookmarksElement, bookmark) => {
     
     bookmarkTitleElement.textContent = bookmark.desc;
     bookmarkTitleElement.className = "bookmark-title";
+
+    // Create note element if note exists
+    const noteElement = document.createElement("div");
+    if (bookmark.note && bookmark.note.trim() !== "") {
+        noteElement.textContent = bookmark.note;
+        noteElement.className = "bookmark-note";
+    }
     
     //create the element which contains all control elements
     controlsElement.className = 'bookmark-controls';
@@ -20,7 +27,15 @@ const addNewBookmark = (bookmarksElement, bookmark) => {
     setBookmarkAttributes("play", onPlay, controlsElement);
     setBookmarkAttributes("delete",onDelete, controlsElement);;
 
-    newBookmarkElement.appendChild(bookmarkTitleElement);
+    // Create a container for title and note
+    const textContainer = document.createElement("div");
+    textContainer.className = "bookmark-text";
+    textContainer.appendChild(bookmarkTitleElement);
+    if (bookmark.note && bookmark.note.trim() !== "") {
+        textContainer.appendChild(noteElement);
+    }
+
+    newBookmarkElement.appendChild(textContainer);
     newBookmarkElement.appendChild(controlsElement);
     bookmarksElement.appendChild(newBookmarkElement);
 

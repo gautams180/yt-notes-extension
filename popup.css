@@ -41,6 +41,20 @@
   padding-left: 2px;
 }
 
+.bookmark-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.bookmark-note {
+  padding-left: 2px;
+  font-size: 11px;
+  color: #666;
+  margin-top: 2px;
+  font-style: italic;
+}
+
 .bookmark-controls img {
   margin: 0 4px;
   width: 18px;

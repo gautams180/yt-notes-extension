@@ -1,0 +1,62 @@
+
+.bookmarkInputContainer {
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  z-index: 2147483647;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bookmarkInputContainer.visible {
+  display: flex;
+}
+
+.bookmarkInput {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  width: 200px;
+  outline: none;
+}
+
+.bookmarkInput:focus {
+  border-color: #66afe9;
+  box-shadow: 0 0 4px rgba(102, 175, 233, 0.6);
+}
+
+.bookmarkIconsRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.bookmarkIcon {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.bookmarkIcon:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.crossIcon {
+  color: #dc3545;
+}
+
+.checkIcon {
+  color: #28a745;
+}
